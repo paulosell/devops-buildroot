@@ -6,7 +6,7 @@ RUN apt-get install -y --force-yes which sed binutils build-essential diffutils 
     python3 libncurses5-dev libncursesw5-dev libncurses5 libncursesw5 git   \
     curl cvs mercurial openssh-client subversion 
 
-RUN wget https://buildroot.org/downloads/buildroot-2024.02.10.tar.gz
-RUN tar zxvf buildroot-2024.02.10.tar.gz && rm buildroot-2024.02.10.tar.gz
+RUN wget https://buildroot.org/downloads/buildroot-2024.11.1.tar.gz
+RUN tar zxvf buildroot-2024.11.1.tar.gz && rm buildroot-2024.11.1.tar.gz
 RUN mkdir /var/buildroot
-RUN mv buildroot-2024.02.10 /var/buildroot 
+RUN mv buildroot-2024.11.1/* /var/buildroot 
