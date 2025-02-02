@@ -10,3 +10,4 @@ RUN wget https://buildroot.org/downloads/buildroot-2024.11.1.tar.gz
 RUN tar zxvf buildroot-2024.11.1.tar.gz && rm buildroot-2024.11.1.tar.gz
 RUN mkdir /var/buildroot
 RUN mv buildroot-2024.11.1/* /var/buildroot 
+RUN rm -r buildroot-2024.11.1
