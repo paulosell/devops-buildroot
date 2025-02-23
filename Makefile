@@ -1,7 +1,7 @@
 
 REPOSITORY := buildroot
 SERVER := docker.io
-ORG := paulosell
+ORG ?= paulosell
 TAG ?= latest
 IMAGE_URL := $(SERVER)/$(ORG)/$(REPOSITORY)
 COMMIT := $(shell git log --format=%h -n1)
