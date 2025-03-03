@@ -11,7 +11,8 @@ PHONY: all build
 all: build 
 
 verify-image-url:
-	@if [ "X`docker image ls | grep $(ORG)/$(REPOSITORY) | grep $(COMMIT)`" = "X" ]; then \
+	@if [ "X`docker image ls | grep $(ORG)/$(REPOSITORY) | grep $(COMMIT)`" =
+	 "X" ]; then \
 		echo "Error: $(ORG)/$(REPOSITORY):$(COMMIT) not found"; \
 		false ; \
 	fi	
