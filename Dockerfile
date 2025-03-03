@@ -7,13 +7,18 @@ RUN apt-get update && apt-get upgrade -y && \
     curl cvs mercurial openssh-client subversion && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /var/buildroot
+WORKDIR /var/buildroot-2024.11.1
 
 RUN wget https://buildroot.org/downloads/buildroot-2024.11.1.tar.gz && \
     tar zxvf buildroot-2024.11.1.tar.gz --strip-components=1 && \
     rm buildroot-2024.11.1.tar.gz
 
-RUN useradd -m -s /bin/bash devops
+WORKDIR /var/buildroot
+RUN chmod g+w /var/buildroot
+
+RUN useradd -m -s /bin/bash devops && \
+    usermod -aG root devops && chown -R devops:devops /var/buildroot
+
 USER devops
 
 WORKDIR /home/devops 
